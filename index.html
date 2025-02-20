@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Four</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md py-3 px-6 sticky top-0 z-50">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-3xl md:text-5xl font-bold text-zinc-100" style="text-shadow: 3.5px 3.5px 3.5px black;">
+                The-Four
+            </div>
+    
+            <!-- Thanh tìm kiếm (Luôn hiển thị, nhỏ gọn trên mobile) -->
+            <div class="flex p-1 items-center border border-gray-300 rounded-md overflow-hidden w-3/5 md:w-1/3">
+                <input type="text" placeholder="Tìm kiếm sản phẩm..." class="flex-1 px-4 py-2 outline-none">
+                <button class="text-black px-4 py-2">
+                    <i class="fas fa-image"></i> <!-- Icon hình ảnh -->
+                </button>
+                <button class=" text-black px-4 py-2">
+                    <i class="fas fa-search"></i> <!-- Icon kính lúp -->
+                </button>
+            </div>
+    
+            <!-- Nút mở menu trên mobile -->
+            <button id="menu-toggle" class="md:hidden text-xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <!-- Menu tài khoản & giỏ hàng (Ẩn trên mobile) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="flex items-center space-x-2 cursor-pointer">
+                    <i class="fas fa-user text-xl"></i>
+                    <span class="text-sm">Đăng nhập / Đăng ký</span>
+                </div>
+                <div class="flex items-center space-x-2 relative cursor-pointer">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="text-sm">Giỏ hàng</span>
+                    <span class="absolute -top-2 -right-3 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                        0
+                    </span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Menu danh mục (Ẩn trên mobile, hiển thị trên md trở lên) -->
+        <nav class="hidden md:flex justify-center space-x-6 mt-3 text-gray-900">
+            <a href="#" class="hover:text-black">Hàng mới về</a>
+            <a href="#" class="hover:text-black">Mặt hàng bán chạy nhất</a>
+            <a href="#" class="hover:text-black">Outerwear</a>
+            <a href="#" class="hover:text-black">Phụ kiện</a>
+            <a href="#" class="hover:text-black">Sale off ⌄</a>
+            <a href="#" class="hover:text-black">Flash sale</a>
+        </nav>
+    
+        <!-- Menu dropdown cho mobile (Có hiệu ứng trượt xuống) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-3 text-gray-900 text-center md:hidden mt-3 bg-gray-100 p-4 rounded-md shadow-lg">
+            <a href="#" class="hover:text-black block py-2 border-b">Hàng mới về</a>
+            <a href="#" class="hover:text-black block py-2 border-b">Mặt hàng bán chạy nhất</a>
+            <a href="#" class="hover:text-black block py-2 border-b">Outerwear</a>
+            <a href="#" class="hover:text-black block py-2 border-b">Phụ kiện</a>
+            <a href="#" class="hover:text-black block py-2 border-b">Sale off ⌄</a>
+            <a href="#" class="hover:text-black block py-2">Flash sale</a>
+        </div>
+    </header>
+
+
+    <div class="bg-gray-100">
+        <section class="relative bg-cover bg-center h-[100vh] overflow-hidden">
+          
+          <div class="absolute inset-0 bg-cover bg-center bg-[url('https://theme.hstatic.net/1000344185/1001270599/14/slideshow_2.jpg?v=280')]"></div>
+        </section>
+  
+      
+        <section class="p-20">
+            <div class="container mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-8">CÁC DỊCH VỤ NỔI BẬT</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 mt-8">
+                
+                <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+                <div class="text-3xl text-gray-500 mb-4">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20h4v-2h-4v2zm-4-2V5a2 2 0 012-2h8a2 2 0 012 2v13a2 2 0 01-2 2H8a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg w-[200px] text-center truncate font-semibold">Giao Hàng Miễn Phí</h3>
+                <p class="mt-2 text-sm">Miễn phí giao hàng cho mọi đơn hàng trên toàn quốc.</p>
+                </div>
+    
+                
+                <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+                <div class="text-3xl text-gray-500 mb-4">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm0 0v4m0 0l-2-2m2 2l2-2m-7.707-4.707l-2.828 2.828C4.62 15.854 4 13.264 4 12c0-2.21 3.134-4 7-4s7 1.79 7 4c0 1.264-.62 3.854-1.465 4.828l-2.828-2.828" />
+                    </svg>
+                </div>
+                <h3 class="text-lg w-[200px] text-center truncate font-semibold">Hỗ Trợ 24/7</h3>
+                <p class="mt-2 text-sm">Chúng tôi luôn sẵn sàng hỗ trợ bạn bất cứ lúc nào.</p>
+                </div>
+    
+            
+                <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+                <div class="text-3xl text-gray-500 mb-4">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4-4m0 0l4 4m-4-4v12M4 6l4 4m0 0l4-4m-4 4V2" />
+                    </svg>
+                </div>
+                <h3 class="text-lg w-[200px] text-center truncate font-semibold">Miễn Phí Đổi Trả</h3>
+                <p class="mt-2 text-sm">Miễn phí đổi trả trong vòng 30 ngày nếu bạn không hài lòng với sản phẩm.</p>
+                </div>
+    
+            
+                <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+                <div class="text-3xl text-gray-500 mb-4">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a2 2 0 012-2h14a2 2 0 012 2v16a2 2 0 01-2 2H5a2 2 0 01-2-2V4z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg w-[200px] text-center truncate font-semibold">Đặt Hàng Trực Tuyến</h3>
+                <p class="mt-2 text-sm">Đặt hàng nhanh chóng và dễ dàng qua website của chúng tôi.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+    
+        <hr class="w-[90%]  ml-[5%]"/>
+    
+        <section class="p-20">
+            <div class="container mx-auto text-center">
+                <h2 class="text-5xl font-bold mb-8">SẢN PHẨM NỔI BẬT</h2>
+                <div class="relative">
+                    <!-- Nút bấm trái -->
+                    <button 
+                        id="scrollLeft"
+                        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white px-4 py-2 rounded-4xl opacity-70 hover:opacity-100 focus:outline-none z-10"
+                    >
+                        &#8592;
+                    </button>
+                    
+                    <!-- Nút bấm phải -->
+                    <button 
+                        id="scrollRight"
+                        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white px-4 py-2 rounded-4xl opacity-70 hover:opacity-100 focus:outline-none z-10"
+                    >
+                        &#8594;
+                    </button>
+        
+                    <!-- Danh sách sản phẩm -->
+                    <div
+                        id="scrollContainer"
+                        class="flex overflow-x-hidden gap-8 mt-8 scroll-smooth"
+                    >
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img//z6327437367554_aad6cba4a98ba4cf8b620e1b088c1601.jpg" alt="Sản phẩm 1" class="w-[100%]"/</a>>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">AIRY DENIM SHORTS - DARK BLUE</h3>
+                
+                        </div>
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437239536_78711c1dd9ec965174c518773beefc44.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">BADGE TEE - FADED</h3>
+                
+                        </div>
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437208528_1b4eaca75f13e80fb67cac8c54158aba.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">BADGE TEE - GRAPHITE</h3>
+                
+                        </div>
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437248744_1c71d0c7abeb5b5aa74bc7514681f3ef.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">CREW LS JERSEY - RED</h3>
+                
+                        </div>
+
+        
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437249009_4cf220814c50d00c65a01ab6b33fd16c.jpg" alt="Sản phẩm 2" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">CREW LS JERSEY - BLACK</h3>
+                
+                        </div>
+        
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437254184_78a23591a5d86bcbfdd54540cc03caaa.jpg" alt="Sản phẩm 3" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">SIGNATURE TEE - PINK</h3>
+                
+                        </div>
+        
+                        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+                            <div class="text-3xl text-gray-500 mb-4">
+                                <a href="./html/detail.html"> <img src="./img/z6327437267212_ba55dd14b9b8c3d6ef0254bbedb7f8d2.jpg" alt="Sản phẩm 4" class="w-[100%]"/></a>
+                            </div>
+                            <h3 class="text-lg w-[200px] text-center truncate font-semibold">LOOSE ZIP HOODIE - WASHED</h3>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+        <hr class="w-[90%]  ml-[5%]"/>
+    
+        <section class="p-20">
+        <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-bold mb-8">SẢN PHẨM BÁN CHẠY</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mt-8">
+        
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437447520_8d7dfddc1ae1fc25fb9473806c44f17c.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">SIGNATURE TEE - PINK</h3>
+            </div>
+    
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437444021_c7e7fd89d52876a73e266292e5874ce9.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">NEBULA CARGO PANTS - WHITE</h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437441051_926c6023eadad747008862f6fb85ad51.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">PIN BUTTON SHIRT - BEIGE</h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437435638_b7bcaec304778be8b1bc0837227517a0.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">SHADOW TANKTOP</h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437431770_49c90412a05a683e76adac99876363ce.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">EDGE WASHED JEANS</h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437431770_49c90412a05a683e76adac99876363ce.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">TEE - GRAPHITE</h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437419520_06d851b9529f6b6bde2efc89ca0d46ce.jpg" alt="Sản phẩm 1" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">SLATE JACKET</h3>
+            </div>
+        
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437418725_22e4f66eb5101daf51126ce89178b833.jpg" alt="Sản phẩm 2" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">COLLAR SHIRT - WHITE</h3>
+            </div>
+    
+        
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437396822_40f8fabdb936db946eb892b2ed225b8f.jpg" alt="Sản phẩm 3" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">NIGHTSTAR BACKPACK</h3>
+            </div>
+    
+        
+            <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center">
+            <div class="text-3xl text-gray-500 mb-4">
+                <a href="./html/detail.html" > <img src="./img/z6327437377766_c9e7ec8cae0a938bc69a3db75fa7948a.jpg" alt="Sản phẩm 4" class="w-[100%]"/></a>
+            </div>
+            <h3 class="text-lg w-[200px] text-center truncate font-semibold">ROCKY TEE - FADED</h3>
+            </div>
+        </div>
+        </div>
+        </section>
+    
+        <hr class="w-[90%] ml-[5%]"/> 
+
+        <section class="p-10">
+            <h2 class="text-5xl flex items-center justify-center font-bold mb-8">TOP ĐÁNH GIÁ</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Ảnh lớn bên trái -->
+                <div class="row-span-2">
+                    <a href="./html/detail.html"> <img src="./img/z6327437418725_22e4f66eb5101daf51126ce89178b833.jpg" 
+                         alt="Hình 1" 
+                         class="w-full h-[32] object-cover rounded-lg">
+                    </a>
+                </div>
+        
+                <!-- Ảnh nhỏ phía trên bên phải -->
+                <div>
+                    <a href="./html/detail.html"> <img src="./img/z6327437300020_866e152259378154feca6257ea63a7d9.jpg" 
+                         alt="Hình 2" 
+                         class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                </div>
+        
+                <!-- Ảnh lớn ở giữa bên phải -->
+                <div class="row-span-2">
+                   <a  href="./html/detail.html" ><img src="./img/z6327437435638_b7bcaec304778be8b1bc0837227517a0.jpg" 
+                         alt="Hình 3" 
+                         class="w-full h-[32] object-cover rounded-lg">
+                    </a>
+                </div>
+        
+                <!-- Ảnh nhỏ phía dưới bên trái -->
+                <div>
+                   <a  href="./html/detail.html" > <img src="./img/z6327437396822_40f8fabdb936db946eb892b2ed225b8f.jpg" 
+                         alt="Hình 4" 
+                         class="w-full h-56 object-cover rounded-lg">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="mt-5 w-[100%] max-w-3xl mx-auto bg-white shadow-md p-5 rounded-md flex items-center">
+            <!-- Icon bên trái -->
+            <div class="flex items-center space-x-2 text-gray-700">
+                <i class="fas fa-envelope text-2xl"></i>
+                <span class="text-lg font-semibold">Nhận khuyến mãi</span>
+            </div>
+        
+            <!-- Ô nhập email -->
+            <div class="flex-1 flex items-center border-l border-gray-300 pl-4 ml-4">
+                <input type="email" placeholder="Nhập email của bạn"
+                    class="w-full outline-none text-gray-600 px-2 py-1">
+                <button class="text-gray-600 pr-2">
+                    <i class="fas fa-paper-plane"></i> <!-- Icon gửi -->
+                </button>
+            </div>
+        </section>
+        
+        
+
+        <footer class="mt-10 bg-black text-white py-12">
+            <div class="container mx-auto px-6">
+                <!-- Phần chính -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                    <!-- Logo & Thông tin -->
+                    <div>
+                        <h1 class="text-3xl font-extrabold text-white">The Four</h1>
+                        <p class="mt-4 text-gray-400">
+                            Đem đến những trải nghiệm và những mẫu thời trang cao cấp nhất và nổi bật nhất.
+                        </p>
+                        <!-- Mạng xã hội -->
+                        <div class="flex justify-center md:justify-start gap-3 mt-5">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+        
+                    <!-- Menu -->
+                    <div>
+                        <h2 class="text-xl font-semibold uppercase tracking-wider">Thông Tin</h2>
+                        <ul class="mt-5 space-y-3">
+                            <li><a href="#" class="footer-link">Trang Chủ</a></li>
+                            <li><a href="#" class="footer-link">Giới Thiệu</a></li>
+                            <li><a href="#" class="footer-link">Ưu Đãi</a></li>
+                            <li><a href="#" class="footer-link">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Phương thức thanh toán -->
+                    <div>
+                        <h2 class="text-xl font-semibold uppercase tracking-wider">Thanh Toán</h2>
+                        <div class="flex justify-center md:justify-start gap-4 mt-5">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="Momo" class="h-8">
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Footer Bottom -->
+                <div class="mt-10 text-center text-sm border-t border-gray-700 pt-5">
+                    <p>&copy; 2025 THEFOUR. Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+        
+      </div>
+</body>
+    <script src="./js//script.js"></script>
+</html>
